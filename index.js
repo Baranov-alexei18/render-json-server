@@ -7,6 +7,7 @@ const port = process.env.PORT || 8080;
 server.use(middlewares);
 
 server.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', '*');
     res.header('Access-Control-Expose-Headers', 'X-Total-Count');
     next();
 });
